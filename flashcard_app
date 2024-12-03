@@ -1,0 +1,38 @@
+# flashcard_app.py
+
+import json
+
+def create_deck(deck_name, cards):
+    with open(f"{deck_name}.json", "w") as file:
+        json.dump(cards, file)
+
+def test_deck(deck_name):
+    with open(f"{deck_name}.json", "r") as file:
+        cards = json.load(file)
+    for card in cards:
+        print(f"Question: {card['question']}")
+        input("Press Enter to reveal the answer...")
+        print(f"Answer: {card['answer']}\n")
+
+# Sample usage
+create_deck("math", [{"question": "2+2?", "answer": "4"}, {"question": "3*3?", "answer": "9"}])
+test_deck("math")
+# flashcard_app.py
+
+import json
+
+def create_deck(deck_name, cards):
+    with open(f"{deck_name}.json", "w") as file:
+        json.dump(cards, file)
+
+def test_deck(deck_name):
+    with open(f"{deck_name}.json", "r") as file:
+        cards = json.load(file)
+    for card in cards:
+        print(f"Question: {card['question']}")
+        input("Press Enter to reveal the answer...")
+        print(f"Answer: {card['answer']}\n")
+
+# Sample usage
+create_deck("math", [{"question": "2+2?", "answer": "4"}, {"question": "3*3?", "answer": "9"}])
+test_deck("math")
